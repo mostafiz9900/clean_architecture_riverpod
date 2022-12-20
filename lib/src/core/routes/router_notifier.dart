@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../presentation/home/pages/home_page.dart';
+import '../../todo/ui/todo_page.dart';
 
 /// This notifier exposes nothing (void) but implements [Listenable].
 /// This notifier is meant to just access its internal [Notifier].
@@ -94,6 +95,10 @@ class RouterNotifier extends AutoDisposeAsyncNotifier<bool>
         GoRoute(
           path: LoginPage.path,
           builder: (context, state) => const LoginPage(),
+        ),
+          GoRoute(
+          path: TodoPage.path,
+          builder: (context, state) => const TodoPage(),
         ),
       ];
 

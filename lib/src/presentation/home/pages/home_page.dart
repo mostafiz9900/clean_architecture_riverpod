@@ -1,4 +1,5 @@
 import 'package:clean_arch_riverpod/src/about/ui/about.dart';
+import 'package:clean_arch_riverpod/src/todo/ui/todo_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -20,10 +21,17 @@ class HomePage extends ConsumerWidget {
           children: [
             const Text("Home Page"),
             ListTile(
-              title: Text('About'),
-              trailing: Icon(Icons.forward),
+              title: const Text('About'),
+              trailing: const Icon(Icons.forward),
               onTap: () {
                 context.go(AboutPage.path);
+              },
+            ),
+            ListTile(
+              title: const Text('todo'),
+              trailing: const Icon(Icons.forward),
+              onTap: () {
+                context.go(TodoPage.path);
               },
             ),
           ],
